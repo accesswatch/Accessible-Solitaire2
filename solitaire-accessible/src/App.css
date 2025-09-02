@@ -1,0 +1,313 @@
+/* Foundation pile styling */
+
+.foundation-container {
+  background: #f3f4f6;
+  color: #222;
+  border: 2px solid #d1d5db;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 110px;
+  min-height: 180px;
+  margin: 0 8px;
+  padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+}
+
+/* Stock pile styling */
+.stock-container {
+  background: #fffbe7;
+  color: #222;
+  border: 2px solid #ffe082;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 110px;
+  min-height: 180px;
+  margin: 0 8px;
+  padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+}
+
+/* Waste pile styling */
+.waste-container {
+  background: #fce4ec;
+  color: #222;
+  border: 2px solid #f8bbd0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 110px;
+  min-height: 180px;
+  margin: 0 8px;
+  padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+}
+/* Color scheme selection buttons */
+.color-scheme-select {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+/* Color scheme variables */
+:root {
+  --background-main: #2e7d32;
+  --background-secondary: #f5f5f5;
+  --card-face: #fff;
+  --card-border: #222;
+  --card-red: #d00;
+  --card-black: #222;
+  --button-bg: #1976d2;
+  --button-text: #fff;
+  --button-border: #1565c0;
+}
+
+.color-scheme-default {
+  background: var(--background-main);
+  color: var(--card-black);
+}
+
+.color-scheme-dark {
+  --background-main: #222;
+  --background-secondary: #333;
+  --card-face: #444;
+  --card-border: #fff;
+  --button-bg: #444;
+  --button-text: #fff;
+  --button-border: #888;
+  background: var(--background-main);
+  color: var(--card-face);
+}
+
+.color-scheme-contrast {
+  --background-main: #000;
+  --background-secondary: #fff;
+  --card-face: #fff;
+  --card-border: #000;
+  --card-red: #ff0;
+  --card-black: #000;
+  --button-bg: #ff0;
+  --button-text: #000;
+  --button-border: #000;
+  background: var(--background-main);
+  color: var(--card-black);
+}
+
+.App {
+  background: #181c24;
+  color: #f3f4f6;
+  letter-spacing: 0.02em;
+}
+
+.card-container {
+  background: var(--card-face);
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  margin: 2px;
+  padding: 8px;
+  min-width: 60px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.card-container.red {
+  color: var(--card-red);
+}
+.card-container.black {
+  color: var(--card-black);
+}
+
+.action-buttons button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--button-border);
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+/* ...existing code... */
+/* Action buttons below stock and waste */
+.action-buttons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+.pile:focus {
+  outline: 3px solid #f59e42;
+  z-index: 2;
+}
+/* Visually hidden for screen readers */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+/* Card color styles */
+.red-card {
+  color: #e53935;
+}
+.black-card {
+  color: #222;
+}
+.selected-card {
+  outline: 3px solid #f59e42;
+  box-shadow: 0 0 0 4px rgba(245,158,66,0.25);
+}
+.pile-container {
+  background: #e0f2fe;
+  color: #222;
+  border: 2px solid #38bdf8;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 110px;
+  min-height: 180px;
+  margin: 0 8px;
+  padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+}
+.App {
+  text-align: center;
+}
+/* Add style for refresh button */
+.refresh-btn {
+  margin-bottom: 1em;
+  background: #2563eb;
+  color: #fff;
+  border: 2px solid #1e40af;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.refresh-btn:focus {
+  outline: 3px solid #f59e42;
+}
+
+.refresh-btn:hover {
+  background: #1e40af;
+  border-color: #1e293b;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.solitaire-table {
+  background: #217a3c;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.deal-btn {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: 2px solid #1e40af;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.deal-btn:focus {
+  outline: 3px solid #f59e42;
+}
+
+.deal-btn:hover {
+  background: #1e40af;
+  border-color: #1e293b;
+}
+
+.pile-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pile-btn {
+  width: 90px;
+  height: 130px;
+  margin: 6px 0;
+  background: #f8fafc;
+  color: #222;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+  outline: none;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.dealt-cards {
+  margin-top: 2rem;
+}
+
+.dealt-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.card-span {
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: #f8fafc;
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
