@@ -1,0 +1,23 @@
+# Dependabot configuration to ignore a security update for webpack-dev-server
+# Reason: react-scripts@5 pins webpack-dev-server@^4.x, and no compatible patched version
+# is currently available; ignore the specific security advisory for now to avoid failing the
+# Dependabot job. Review periodically and remove this ignore when react-scripts or
+# webpack-dev-server supplies a compatible patched release.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/solitaire-accessible"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    # Only create security updates (to reduce noise) — keep as true if you prefer.
+    # Set to false if you want all updates.
+    security-updates-only: true
+    ignore:
+      - dependency-name: "webpack-dev-server"
+        # Ignore only security updates (allow other update types if needed)
+        update-types: ["security"]
+        # Provide a reason and a date to revisit
+        # Note: YAML comments here are for humans; Dependabot ignores don't have a 'reason' field.
+        # We'll include an expiry comment for maintainers to review.
+        # review-by: 2026-01-01
